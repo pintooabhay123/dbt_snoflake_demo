@@ -1,0 +1,39 @@
+
+version: 2
+
+models:
+  - name: car_model
+    description: "car dimesinal table, which will contain all the car related data"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: model_name
+        description: "car model name"
+        tests:
+          - not_null
+      - name: company_name
+        description: "Compnay name who manufactures the car"
+        tests:
+          - not_null
+      - name: origin_country
+        description: "origin country where company head quarter is situated"
+        tests:
+          - not_null            
+  
+  - name: car_manufacturing_details_model
+    description: "manufacturing details of the car"
+    columns:
+      - name: car_model_id
+        description: "The reference key for this table"
+        tests:
+          - not_null
+      - name: ACCELERATION
+      - name: CYLINDERS
+      - name: MPG
+      - name: DISPLACEMENT
+      - name: MODEL_YEAR
+      - name: HORSEPOWER
+      - name: WEIGHT    
